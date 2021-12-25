@@ -4,4 +4,9 @@ my_stuff = {"key1": "ram", "key2": "sthapit",
 
 print(my_stuff['key1'])
 print(my_stuff['key2'])
-print
+print(my_stuff['key3']['123'][2])
+
+stuff = {'lunch':'pizza','bfast':'eggs'}
+print(stuff['lunch'])
+stuff['dinner'] = 'pasta' # add new item to Dictionaries
+print(stuff)
