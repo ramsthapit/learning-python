@@ -8,7 +8,7 @@ body {
 }
 
 main {
-  height: 80vh;
+  min-height: 80vh;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
