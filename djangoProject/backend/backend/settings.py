@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import django_heroku
+import django
 from django.conf import settings
 from datetime import timedelta
 from pathlib import Path
@@ -27,7 +29,7 @@ SECRET_KEY = 'django-insecure-znt$c*l+z0dzzud9z=zhm4o+xmc0u^*1n9+sbu&n9**yb00k2#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['prodjango-ram.herokuapp.com']
 
 
 # Application definition
@@ -128,10 +130,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'simpleblog',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
+        'NAME': 'd4kvbp7d67moos',
+        'USER': 'mkonkdswzxldph',
+        'PASSWORD': '128966221b9daad87fc8aaa8e9b9ab65985a3151907b47f0474a7c201f9ae5ee',
+        'HOST': 'ec2-3-227-15-75.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -170,6 +172,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
@@ -179,6 +182,8 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = 'static/images'
+
+django_heroku.setting(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
